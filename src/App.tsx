@@ -14,13 +14,6 @@ export default function App() {
   const [activeTab, setActiveTab] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    if (!mobileMenuOpen) return;
-    const handler = () => setMobileMenuOpen(false);
-    document.body.addEventListener('click', handler);
-    return () => document.body.removeEventListener('click', handler);
-  }, [mobileMenuOpen]);
-
   return (
     <div className="min-h-screen pb-20 relative overflow-hidden">
       {/* Decorative background subtle elements could go here */}
