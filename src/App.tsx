@@ -95,7 +95,7 @@ export default function App() {
               ))}
               <a 
                 href="mailto:742764356@qq.com" 
-                className="flex items-center gap-2 px-4 py-3 font-bold text-brutal-blue hover:bg-gray-100 rounded-xl"
+                className="flex items-center gap-2 px-4 py-3 font-bold text-brutal-blue hover:bg-gray-100 rounded-xl whitespace-nowrap"
               >
                 <Mail size={18} />
                 联系我
@@ -142,11 +142,11 @@ function HomeTab() {
             有较强的责任心和学习能力，能快速适应工作内容和环境。具有抗压能力以及较强的沟通能力和团队协作精神，能够快速融入团队并积极解决问题。
           </p>
           <div className="flex items-center gap-4 pt-4">
-            <a href="mailto:742764356@qq.com" className="bg-black text-white font-bold px-8 py-4 rounded-xl brutal-shadow-sm brutal-btn flex items-center gap-2">
+            <a href="mailto:742764356@qq.com" className="bg-black text-white font-bold px-8 py-4 rounded-xl brutal-shadow-sm brutal-btn flex items-center gap-2 flex-shrink-0 whitespace-nowrap">
               <Mail size={20} />
               联系我
             </a>
-            <button onClick={() => window.open('tel:18827118310')} className="bg-white text-black font-bold px-8 py-4 rounded-xl brutal-border brutal-shadow-sm brutal-btn flex items-center gap-2">
+            <button onClick={() => window.open('tel:18827118310')} className="bg-white text-black font-bold px-8 py-4 rounded-xl brutal-border brutal-shadow-sm brutal-btn flex items-center gap-2 flex-shrink-0 whitespace-nowrap">
               <Briefcase size={20} />
               18827118310
             </button>
