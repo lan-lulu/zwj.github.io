@@ -47,7 +47,7 @@ export default function App() {
 
           {/* Mobile: current tab name + hamburger */}
           <div className="flex md:hidden items-center gap-3">
-            <span className={`font-bold ${activeTab === 'home' ? 'text-black' : 'text-brutal-blue'}`}>
+            <span className="font-bold text-base text-black">
               {tabs.find(t => t.id === activeTab)?.label}
             </span>
             <button
