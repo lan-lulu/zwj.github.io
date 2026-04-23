@@ -45,10 +45,25 @@ export default function App() {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile: current tab name + hamburger */}
+          <div className="flex md:hidden items-center gap-3">
+            <span className="text-sm font-bold text-brutal-blue">
+              {tabs.find(t => t.id === activeTab)?.label}
+            </span>
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="flex flex-col justify-center items-center w-10 h-10 gap-1.5"
+            >
+              <span className={`block w-6 h-0.5 bg-black transition-transform ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+              <span className={`block w-6 h-0.5 bg-black transition-opacity ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`block w-6 h-0.5 bg-black transition-transform ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            </button>
+          </div>
+
+          {/* Desktop hamburger - hidden on mobile */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5"
+            className="hidden md:flex flex-col justify-center items-center w-10 h-10 gap-1.5"
           >
             <span className={`block w-6 h-0.5 bg-black transition-transform ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
             <span className={`block w-6 h-0.5 bg-black transition-opacity ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
@@ -149,7 +164,7 @@ function HomeTab() {
 
         <div className="flex-1 flex justify-center md:justify-end">
           <div className="w-full max-w-[380px] h-[380px] bg-brutal-yellow brutal-border brutal-shadow rounded-3xl relative overflow-hidden">
-            <img src="img1.png" alt="张文杰" className="w-full h-full object-cover" />
+            <img src="img1.jpg" alt="张文杰" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
@@ -203,7 +218,7 @@ function SkillsTab() {
 
         <div className="flex-1 flex justify-center md:justify-start">
           <div className="w-full max-w-[420px] aspect-square bg-brutal-red brutal-border rounded-full flex items-center justify-center relative overflow-hidden brutal-shadow">
-            <img src="img2.png" alt="个人技能" className="w-[102%] h-[102%] object-contain" />
+            <img src="img2.jpg" alt="个人技能" className="w-[102%] h-[102%] object-contain" />
           </div>
         </div>
       </section>
