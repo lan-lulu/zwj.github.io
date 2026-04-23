@@ -202,7 +202,7 @@ function SkillsTab() {
         </div>
 
         <div className="flex-1 flex justify-center md:justify-start">
-          <div className="w-full max-w-[420px] h-[420px] bg-brutal-red brutal-border rounded-full flex items-center justify-center relative overflow-hidden brutal-shadow">
+          <div className="w-full max-w-[420px] aspect-square bg-brutal-red brutal-border rounded-full flex items-center justify-center relative overflow-hidden brutal-shadow">
             <img src="img2.png" alt="个人技能" className="w-[102%] h-[102%] object-contain" />
           </div>
         </div>
