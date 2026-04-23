@@ -60,16 +60,7 @@ export default function App() {
             </button>
           </div>
 
-          {/* Desktop hamburger - hidden on mobile */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="hidden md:flex flex-col justify-center items-center w-10 h-10 gap-1.5"
-          >
-            <span className={`block w-6 h-0.5 bg-black transition-transform ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-            <span className={`block w-6 h-0.5 bg-black transition-opacity ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
-            <span className={`block w-6 h-0.5 bg-black transition-transform ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
-          </button>
-
+          
           <a href="mailto:742764356@qq.com" className="bg-black text-white w-10 h-10 rounded-full flex items-center justify-center brutal-btn hidden md:flex">
             <Mail size={18} />
           </a>
