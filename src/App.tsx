@@ -100,7 +100,7 @@ function HomeTab() {
 
         <div className="flex-1 flex justify-center md:justify-end">
           <div className="w-[380px] h-[380px] bg-brutal-yellow brutal-border brutal-shadow rounded-3xl relative overflow-hidden">
-            <img src="/img1.png" alt="张文杰" className="w-full h-full object-cover" />
+            <img src="img1.png" alt="张文杰" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
@@ -154,7 +154,7 @@ function SkillsTab() {
 
         <div className="flex-1 flex justify-center md:justify-start">
           <div className="w-[420px] h-[420px] bg-brutal-red brutal-border rounded-full flex items-center justify-center relative overflow-hidden brutal-shadow">
-            <img src="/img2.png" alt="个人技能" className="w-[102%] h-[102%] object-contain" />
+            <img src="img2.png" alt="个人技能" className="w-[102%] h-[102%] object-contain" />
           </div>
         </div>
       </section>
