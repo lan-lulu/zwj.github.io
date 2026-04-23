@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Mail, Briefcase, GraduationCap, Users, User, ArrowRight, CheckSquare, Square, Play, Code, Layout, Database } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -12,6 +12,14 @@ const tabs = [
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const handler = () => setMobileMenuOpen(false);
+    document.body.addEventListener('click', handler);
+    return () => document.body.removeEventListener('click', handler);
+  }, [mobileMenuOpen]);
 
   return (
     <div className="min-h-screen pb-20 relative overflow-hidden">
@@ -44,11 +52,59 @@ export default function App() {
             ))}
           </div>
 
-          <a href="mailto:742764356@qq.com" className="bg-black text-white w-10 h-10 rounded-full flex items-center justify-center brutal-btn">
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5"
+          >
+            <span className={`block w-6 h-0.5 bg-black transition-transform ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+            <span className={`block w-6 h-0.5 bg-black transition-opacity ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
+            <span className={`block w-6 h-0.5 bg-black transition-transform ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+          </button>
+
+          <a href="mailto:742764356@qq.com" className="bg-black text-white w-10 h-10 rounded-full flex items-center justify-center brutal-btn hidden md:flex">
             <Mail size={18} />
           </a>
         </nav>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed top-24 left-4 right-4 z-40 bg-white brutal-border brutal-shadow rounded-2xl p-4 md:hidden"
+          >
+            <div className="flex flex-col space-y-2">
+              {tabs.map(tab => (
+                <button
+                  key={tab.id}
+                  onClick={() => {
+                    setActiveTab(tab.id);
+                    setMobileMenuOpen(false);
+                  }}
+                  className={`px-4 py-3 text-left font-bold rounded-xl transition-colors ${
+                    activeTab === tab.id 
+                      ? 'bg-brutal-blue text-white' 
+                      : 'text-black hover:bg-gray-100'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+              <a 
+                href="mailto:742764356@qq.com" 
+                className="flex items-center gap-2 px-4 py-3 font-bold text-brutal-blue hover:bg-gray-100 rounded-xl"
+              >
+                <Mail size={18} />
+                联系我
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Main Content area */}
       <main className="max-w-6xl mx-auto px-6 pt-36">
@@ -78,7 +134,7 @@ function HomeTab() {
       {/* Hero Section */}
       <section className="flex flex-col md:flex-row items-center justify-between gap-12">
         <div className="flex-1 space-y-6">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]">
+          <h1 className="text-3xl md:text-7xl font-bold tracking-tight leading-[1.1]">
             你好，我是 <span className="bg-brutal-red text-white highlight-bg">张文杰</span>,<br />
             一名<span className="bg-brutal-blue text-white highlight-bg">Java后端开发工程师</span><br />
             位于 <span className="bg-brutal-yellow text-white highlight-bg">武汉</span>
@@ -99,7 +155,7 @@ function HomeTab() {
         </div>
 
         <div className="flex-1 flex justify-center md:justify-end">
-          <div className="w-[380px] h-[380px] bg-brutal-yellow brutal-border brutal-shadow rounded-3xl relative overflow-hidden">
+          <div className="w-full max-w-[380px] h-[380px] bg-brutal-yellow brutal-border brutal-shadow rounded-3xl relative overflow-hidden">
             <img src="img1.png" alt="张文杰" className="w-full h-full object-cover" />
           </div>
         </div>
@@ -153,7 +209,7 @@ function SkillsTab() {
         </div>
 
         <div className="flex-1 flex justify-center md:justify-start">
-          <div className="w-[420px] h-[420px] bg-brutal-red brutal-border rounded-full flex items-center justify-center relative overflow-hidden brutal-shadow">
+          <div className="w-full max-w-[420px] h-[420px] bg-brutal-red brutal-border rounded-full flex items-center justify-center relative overflow-hidden brutal-shadow">
             <img src="img2.png" alt="个人技能" className="w-[102%] h-[102%] object-contain" />
           </div>
         </div>
