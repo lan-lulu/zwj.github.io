@@ -402,7 +402,7 @@ function EducationTab() {
 
       <div className="relative">
          {/* Timeline Line */}
-         <div className="absolute left-[39px] top-4 md:bottom-4 bottom-4 w-1 bg-black hidden md:block"></div>
+         {/* <div className="absolute left-[39px] top-4 md:bottom-4 bottom-4 w-1 bg-black hidden md:block"></div> */}
 
          <div className="space-y-12">
             {/* Edu Item */}
