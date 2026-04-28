@@ -135,8 +135,8 @@ function HomeTab() {
         <div className="flex-1 space-y-6">
           <h1 className="text-3xl md:text-7xl font-bold tracking-tight leading-[1.1]">
             你好，我是 <span className="bg-brutal-red text-white highlight-bg">张文杰</span>,<br />
-            一名<span className="bg-brutal-blue text-white highlight-bg">Java后端开发工程师</span><br />
-            位于 <span className="bg-brutal-yellow text-white highlight-bg">武汉</span>
+            一名<span className="bg-brutal-blue text-white highlight-bg">Java开发工程师</span><br />
+            现居 <span className="bg-brutal-yellow text-white highlight-bg">武汉</span>
           </h1>
           <p className="text-lg text-gray-700 max-w-lg mt-6">
             有较强的责任心和学习能力，能快速适应工作内容和环境。具有抗压能力以及较强的沟通能力和团队协作精神，能够快速融入团队并积极解决问题。
